@@ -488,7 +488,6 @@ private fun DetailPaneContent(
             )
     }
 }
-}
 
 @Composable
 private fun ManagedAppPickerScreen(
