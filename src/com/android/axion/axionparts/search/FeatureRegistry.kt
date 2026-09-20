@@ -73,6 +73,13 @@ object FeatureRegistry {
             action = "com.android.axion.axionparts.action.SOUND"
         ),
         PartFeature(
+            key = "pcmode_settings",
+            titleRes = R.string.pc_mode,
+            summaryRes = R.string.pc_mode_summary,
+            keywordsRes = R.string.keywords_pcmode,
+            action = "com.android.axion.axionparts.action.PCMODE"
+        ),
+        PartFeature(
             key = "performance_settings",
             titleRes = R.string.performance,
             summaryRes = R.string.performance_summary,
@@ -134,13 +141,6 @@ object FeatureRegistry {
             summaryRes = R.string.essentials_summary,
             keywordsRes = R.string.keywords_essentials,
             action = "com.android.axion.axionparts.action.ESSENTIALS"
-        ),
-        PartFeature(
-            key = "multitasking_settings",
-            titleRes = R.string.multitasking,
-            summaryRes = R.string.multitasking_summary,
-            keywordsRes = R.string.keywords_multitasking,
-            action = "com.android.axion.axionparts.action.MULTITASKING"
         ),
         PartFeature(
             key = "themes_settings",
