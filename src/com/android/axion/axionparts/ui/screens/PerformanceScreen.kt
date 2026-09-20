@@ -30,7 +30,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Sensors
 import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.outlined.Apps
 import androidx.compose.material.icons.outlined.Memory
@@ -59,7 +58,6 @@ fun PerformanceScreen(
             PerformanceContent(
                 onAppOptimizationClick = { onNavigateToDetail("app_optimization") },
                 onBackgroundManagerClick = { onNavigateToDetail("background_manager") },
-                onKernelManagerClick = { onNavigateToDetail("kernel_manager") },
                 onRamPlusClick = { onNavigateToDetail("ram_plus") },
                 modifier = Modifier.padding(innerPadding),
             )
@@ -68,7 +66,6 @@ fun PerformanceScreen(
         PerformanceContent(
             onAppOptimizationClick = { onNavigateToDetail("app_optimization") },
             onBackgroundManagerClick = { onNavigateToDetail("background_manager") },
-            onKernelManagerClick = { onNavigateToDetail("kernel_manager") },
             onRamPlusClick = { onNavigateToDetail("ram_plus") },
             modifier = Modifier,
         )
@@ -79,7 +76,6 @@ fun PerformanceScreen(
 private fun PerformanceContent(
     onAppOptimizationClick: () -> Unit,
     onBackgroundManagerClick: () -> Unit,
-    onKernelManagerClick: () -> Unit,
     onRamPlusClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -135,20 +131,6 @@ private fun PerformanceContent(
             modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Max),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            FeatureCard(
-                title = stringResource(R.string.kernel_manager),
-                summary = stringResource(R.string.kernel_manager_summary),
-                onClick = onKernelManagerClick,
-                modifier = Modifier.weight(1f),
-                illustrationColor = MaterialTheme.colorScheme.tertiaryContainer,
-            ) {
-                Icon(
-                    imageVector = icons.Sensors,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onTertiaryContainer,
-                    modifier = Modifier.size(36.dp),
-                )
-            }
             if (ramPlusSupported) {
                 FeatureCard(
                     title = stringResource(R.string.ram_plus),

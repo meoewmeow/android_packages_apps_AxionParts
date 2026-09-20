@@ -422,7 +422,6 @@ private fun DetailScreen(
                 onBackClick = onBackClick,
                 onNavigateToAppPicker = onNavigateToManagedAppPicker,
             )
-        "kernel_manager" -> KernelManagerScreen(onBackClick = onBackClick)
         "ram_plus" -> RamPlusScreen(onBackClick = onBackClick)
         "app_optimization" -> AppOptimizationScreen(onBackClick = onBackClick)
         "app_picker" ->
@@ -444,7 +443,7 @@ private fun DetailScreen(
                 onNavigateToAppPicker = onNavigateToAppPicker,
             )
         "multitasking" -> MultitaskingScreen(onBackClick = onBackClick)
-        "dual_apps" -> DualAppsScreen(onBackClick = onBackClick)
+        "dual_apps" -> ClonedAppsLauncher(onDone = onBackClick)
     }
 }
 
@@ -484,7 +483,6 @@ private fun DetailPaneContent(
                 onBackClick = onClose,
                 onNavigateToAppPicker = onNavigateToManagedAppPicker,
             )
-        "kernel_manager" -> KernelManagerScreen(onBackClick = onClose)
         "ram_plus" -> RamPlusScreen(onBackClick = onClose)
         "app_picker" ->
             ManagedAppPickerScreen(
@@ -505,7 +503,7 @@ private fun DetailPaneContent(
                 onNavigateToAppPicker = onNavigateToAppPicker,
             )
         "multitasking" -> MultitaskingScreen(onBackClick = onClose)
-        "dual_apps" -> DualAppsScreen(onBackClick = onClose)
+        "dual_apps" -> ClonedAppsLauncher(onDone = onClose)
     }
 }
 
@@ -775,5 +773,21 @@ private fun EmptyDetailPane() {
                 color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
             )
         }
+    }
+}
+
+@Composable
+private fun ClonedAppsLauncher(onDone: () -> Unit) {
+    val context = LocalContext.current
+    LaunchedEffect(Unit) {
+        context.startActivity(
+            Intent().setComponent(
+                ComponentName(
+                    "com.android.settings",
+                    "com.android.settings.Settings\$ClonedAppsListActivity",
+                )
+            )
+        )
+        onDone()
     }
 }

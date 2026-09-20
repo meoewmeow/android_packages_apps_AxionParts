@@ -67,6 +67,8 @@ fun EssentialsScreen(
 ) {
     var currentSubScreen by rememberSaveable { mutableStateOf<String?>(null) }
 
+    val context = LocalContext.current
+
     if (currentSubScreen != null) {
         BackHandler { currentSubScreen = null }
     }
@@ -99,7 +101,16 @@ fun EssentialsScreen(
                         onNavigateToTrickyStore = { currentSubScreen = "trickystore" },
                         onNavigateToPlayIntegrityFix = { currentSubScreen = "playintegrityfix" },
                         onNavigateToAppSpoofing = { currentSubScreen = "appspoofing" },
-                        onNavigateToDualApps = { currentSubScreen = "dual_apps" },
+                        onNavigateToDualApps = {
+                            context.startActivity(
+                                Intent().setComponent(
+                                    ComponentName(
+                                        "com.android.settings",
+                                        "com.android.settings.Settings\$ClonedAppsListActivity",
+                                    )
+                                )
+                            )
+                        },
                     )
                 }
             }
@@ -111,9 +122,6 @@ fun EssentialsScreen(
             }
             "appspoofing", "gamespoofing" -> {
                 AppSpoofingScreen(onBackClick = { currentSubScreen = null })
-            }
-            "dual_apps" -> {
-                DualAppsScreen(onBackClick = { currentSubScreen = null })
             }
         }
     }
