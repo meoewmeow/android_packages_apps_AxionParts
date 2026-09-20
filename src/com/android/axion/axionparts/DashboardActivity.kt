@@ -39,7 +39,6 @@ class DashboardActivity : ComponentActivity() {
             "com.android.axion.axionparts.action.LOCKSCREEN" -> "lockscreen"
             "com.android.axion.axionparts.action.UI_FEATURES" -> "ui_features"
             "com.android.axion.axionparts.action.SOUND" -> "sound"
-            "com.android.axion.axionparts.action.GESTURES" -> "gestures"
             "com.android.axion.axionparts.action.PCMODE" -> "pcmode"
             "com.android.axion.axionparts.action.PERFORMANCE" -> "performance"
             "com.android.axion.axionparts.action.TRICKYSTORE" -> "trickystore"
@@ -51,7 +50,6 @@ class DashboardActivity : ComponentActivity() {
             "com.android.axion.axionparts.action.BRAVIA" -> "bravia_engine"
             "com.android.axion.axionparts.action.DYNAMIC_BAR" -> "dynamic_bar"
             "com.android.axion.axionparts.action.ESSENTIALS" -> "essentials"
-            "com.android.axion.axionparts.action.MULTITASKING" -> "multitasking"
             "com.android.axion.axionparts.action.DUAL_APPS" -> "dual_apps"
             "com.android.axion.axionparts.ACTION_APP_OPTIMIZATION" -> "app_optimization"
             else -> null

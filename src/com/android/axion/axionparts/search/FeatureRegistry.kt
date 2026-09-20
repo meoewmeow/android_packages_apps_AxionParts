@@ -73,20 +73,6 @@ object FeatureRegistry {
             action = "com.android.axion.axionparts.action.SOUND"
         ),
         PartFeature(
-            key = "gestures_settings",
-            titleRes = R.string.gestures,
-            summaryRes = R.string.gestures_subtitle,
-            keywordsRes = R.string.keywords_gestures,
-            action = "com.android.axion.axionparts.action.GESTURES"
-        ),
-        PartFeature(
-            key = "pcmode_settings",
-            titleRes = R.string.pc_mode,
-            summaryRes = R.string.pc_mode_summary,
-            keywordsRes = R.string.keywords_pcmode,
-            action = "com.android.axion.axionparts.action.PCMODE"
-        ),
-        PartFeature(
             key = "performance_settings",
             titleRes = R.string.performance,
             summaryRes = R.string.performance_summary,

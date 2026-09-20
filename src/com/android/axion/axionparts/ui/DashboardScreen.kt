@@ -298,16 +298,9 @@ private fun DashboardContent(
                         VisualCard(
                             title = stringResource(R.string.sound),
                             onClick = { onNavigateToDetail("sound") },
-                            modifier = Modifier.weight(1f).fillMaxHeight(),
+                            modifier = Modifier.fillMaxWidth().fillMaxHeight(),
                         ) {
                             SoundIllustration()
-                        }
-                        VisualCard(
-                            title = stringResource(R.string.gestures),
-                            onClick = { onNavigateToDetail("gestures") },
-                            modifier = Modifier.weight(1f).fillMaxHeight(),
-                        ) {
-                            GesturesIllustration()
                         }
                     }
                 }
@@ -343,12 +336,6 @@ private fun DashboardContent(
                         modifier = Modifier.fillMaxWidth().height(118.dp).then(revealModifier),
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
-                        DashboardCard(
-                            title = stringResource(R.string.multitasking),
-                            icon = Icons.Filled.Splitscreen,
-                            onClick = { onNavigateToDetail("multitasking") },
-                            modifier = Modifier.weight(1f),
-                        )
                         DashboardCard(
                             title = stringResource(R.string.ax_bravia_engine),
                             icon = Icons.Filled.Palette,
@@ -406,7 +393,6 @@ private fun DetailScreen(
         "lockscreen" -> LockscreenFeaturesScreen(onBackClick = onBackClick)
         "ui_features" -> UIFeaturesScreen(onBackClick = onBackClick)
         "sound" -> SoundFeaturesScreen(onBackClick = onBackClick)
-        "gestures" -> GesturesScreen(onBackClick = onBackClick)
         "trickystore" -> TrickyStoreScreen(onBackClick = onBackClick)
         "playintegrityfix" -> PlayIntegrityFixScreen(onBackClick = onBackClick)
         "appspoofing", "gamespoofing" -> AppSpoofingScreen(onBackClick = onBackClick)
@@ -442,7 +428,6 @@ private fun DetailScreen(
                 onBackClick = onBackClick,
                 onNavigateToAppPicker = onNavigateToAppPicker,
             )
-        "multitasking" -> MultitaskingScreen(onBackClick = onBackClick)
         "dual_apps" -> ClonedAppsLauncher(onDone = onBackClick)
     }
 }
@@ -467,7 +452,6 @@ private fun DetailPaneContent(
         "lockscreen" -> LockscreenFeaturesScreen(onBackClick = onClose)
         "ui_features" -> UIFeaturesScreen(onBackClick = onClose)
         "sound" -> SoundFeaturesScreen(onBackClick = onClose)
-        "gestures" -> GesturesScreen(onBackClick = onClose)
         "trickystore" -> TrickyStoreScreen(onBackClick = onClose)
         "playintegrityfix" -> PlayIntegrityFixScreen(onBackClick = onClose)
         "appspoofing", "gamespoofing" -> AppSpoofingScreen(onBackClick = onClose)
@@ -502,9 +486,8 @@ private fun DetailPaneContent(
                 onBackClick = onClose,
                 onNavigateToAppPicker = onNavigateToAppPicker,
             )
-        "multitasking" -> MultitaskingScreen(onBackClick = onClose)
-        "dual_apps" -> ClonedAppsLauncher(onDone = onClose)
     }
+}
 }
 
 @Composable
@@ -728,27 +711,6 @@ private fun SoundIllustration() {
                         .background(colors.tertiary),
                 )
             }
-        }
-    }
-}
-
-@Composable
-private fun GesturesIllustration() {
-    val colors = MaterialTheme.colorScheme
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Box(
-            modifier = Modifier
-                .size(60.dp)
-                .clip(CircleShape)
-                .background(colors.primaryContainer),
-            contentAlignment = Alignment.Center,
-        ) {
-            Icon(
-                imageVector = Icons.Filled.Gesture,
-                contentDescription = null,
-                tint = colors.onPrimaryContainer,
-                modifier = Modifier.size(32.dp),
-            )
         }
     }
 }
