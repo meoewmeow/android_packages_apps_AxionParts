@@ -51,6 +51,7 @@ class DashboardActivity : ComponentActivity() {
             "com.android.axion.axionparts.action.DYNAMIC_BAR" -> "dynamic_bar"
             "com.android.axion.axionparts.action.ESSENTIALS" -> "essentials"
             "com.android.axion.axionparts.action.DUAL_APPS" -> "dual_apps"
+            "com.android.axion.axionparts.action.RAM_PLUS" -> "ram_plus"
             "com.android.axion.axionparts.ACTION_APP_OPTIMIZATION" -> "app_optimization"
             else -> null
         }
