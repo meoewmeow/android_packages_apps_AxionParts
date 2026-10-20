@@ -199,11 +199,50 @@ private fun LockscreenMainContent(
     onNavigateToPulse: () -> Unit,
     onNavigateToAod: () -> Unit,
 ) {
+    val clockBackgroundBlurEnabled by
+        rememberSettingBoolean("ax_clock_background_blur_enabled", SettingsType.SECURE, true)
     Column(
         modifier =
             modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp)
     ) {
         Spacer(modifier = Modifier.height(8.dp))
+
+        PreferenceGroup(title = stringResource(R.string.clock_background)) {
+            item {
+                SecureSettingSwitch(
+                    settingKey = "ax_clock_background_blur_enabled",
+                    title = stringResource(R.string.clock_background_blur),
+                    summary = stringResource(R.string.clock_background_blur_summary),
+                    defaultValue = true,
+                )
+            }
+            item {
+                SecureSettingSlider(
+                    settingKey = "ax_clock_background_blur_radius",
+                    title = stringResource(R.string.clock_background_blur_radius),
+                    summary = stringResource(R.string.clock_background_blur_radius_summary),
+                    min = 0,
+                    max = 100,
+                    defaultValue = 55,
+                    unit = "%",
+                    enabled = clockBackgroundBlurEnabled,
+                )
+            }
+            item {
+                SecureSettingSlider(
+                    settingKey = "ax_clock_background_transparency",
+                    title = stringResource(R.string.clock_background_transparency),
+                    summary = stringResource(R.string.clock_background_transparency_summary),
+                    min = 0,
+                    max = 100,
+                    defaultValue = 45,
+                    unit = "%",
+                    enabled = clockBackgroundBlurEnabled,
+                )
+            }
+        }
+
+        Spacer(modifier = Modifier.height(12.dp))
 
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
             Row(

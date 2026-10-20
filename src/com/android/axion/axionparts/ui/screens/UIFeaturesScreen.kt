@@ -156,15 +156,6 @@ private fun UIFeaturesMainContent(
                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier.weight(1f),
             )
-            FeatureCard(
-                title = stringResource(R.string.dynamic_bar),
-                subtitle = stringResource(R.string.dynamic_bar_summary),
-                icon = Icons.Filled.DynamicFeed,
-                onClick = onNavigateToDynamicBar,
-                illustrationColor = MaterialTheme.colorScheme.tertiaryContainer,
-                iconTint = MaterialTheme.colorScheme.onTertiaryContainer,
-                modifier = Modifier.weight(1f),
-            )
         }
 
         Spacer(modifier = Modifier.height(32.dp))

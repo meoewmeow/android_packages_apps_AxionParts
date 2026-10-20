@@ -47,6 +47,13 @@
     <string name="gestures_subtitle">Shake, three finger &amp; doze pulse</string>
     
     <!-- Lockscreen Features -->
+    <string name="clock_background">Clock blur</string>
+    <string name="clock_background_blur">Blur clock glyphs</string>
+    <string name="clock_background_blur_summary">Blur the wallpaper inside the lockscreen clock glyphs without drawing a panel</string>
+    <string name="clock_background_blur_radius">Blur strength</string>
+    <string name="clock_background_blur_radius_summary">Adjust the wallpaper blur inside the clock glyphs</string>
+    <string name="clock_background_transparency">Clock blur transparency</string>
+    <string name="clock_background_transparency_summary">Higher values make the blurred clock glyphs more transparent</string>
     <string name="edge_light">Edge Light</string>
     <string name="edge_light_description">Lighting effects on screen edges for notifications</string>
     <string name="enable_edge_light">Enable Edge Light</string>

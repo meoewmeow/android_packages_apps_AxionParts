@@ -215,42 +215,6 @@ private fun EssentialsContent(
             }
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
-
-        PreferenceGroup(title = stringResource(R.string.security)) {
-            item {
-                ClickablePreference(
-                    title = stringResource(R.string.trickystore),
-                    summary = stringResource(R.string.trickystore_summary),
-                    icon = Icons.Default.Key,
-                    onClick = onNavigateToTrickyStore,
-                )
-            }
-            item {
-                ClickablePreference(
-                    title = stringResource(R.string.play_integrity_fix),
-                    summary = stringResource(R.string.play_integrity_fix_summary),
-                    icon = Icons.Default.Fingerprint,
-                    onClick = onNavigateToPlayIntegrityFix,
-                )
-            }
-            item {
-                SecureSettingSwitch(
-                    settingKey = "window_ignore_secure",
-                    title = stringResource(R.string.ignore_window_secure),
-                    summary = stringResource(R.string.ignore_window_secure_summary),
-                    icon = Icons.Default.ScreenshotMonitor,
-                )
-            }
-            item {
-                SecureSettingSwitch(
-                    settingKey = "no_storage_restrict",
-                    title = stringResource(R.string.no_storage_restrict_title),
-                    summary = stringResource(R.string.no_storage_restrict_summary),
-                    icon = Icons.Default.Folder,
-                )
-            }
-        }
 
         Spacer(modifier = Modifier.height(32.dp))
     }
